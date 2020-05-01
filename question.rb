@@ -25,9 +25,13 @@ class Question
   end
 
   def check_limit
-  	if @variants.length > 4
-  	  raise LimitError, "Dont create more 4 variants"
+  begin
+    if @variants.length > 4
+      raise LimitError, "Dont create more 4 variants press 2 to stop"
     end
+  rescue LimitError => e
+    puts e.message
+  end
   end
 
   def check_copyright
