@@ -27,7 +27,7 @@ class Question
   def check_limit
   begin
     if @variants.length > 3
-  raise LimitError, "Dont create more 4 variants"
+      raise LimitError, "Dont create more 4 variants"
     end
   rescue LimitError => e
     puts e.message
