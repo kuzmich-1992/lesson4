@@ -60,6 +60,8 @@ loop do
     loop do
       puts 'press 1 to add new variant, press 2 to stop'
       inputvar = gets.to_i
+      question.check_limit
+      break if question.variants.size == 4
       if inputvar == 1
         puts 'print your text variant'
         text = gets.chomp
@@ -70,7 +72,6 @@ loop do
         variant.add_name_company(namecompany)
         question.check_copyright
       end
-      question.check_limit
       break if inputvar == 2
     end
   end

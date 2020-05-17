@@ -26,8 +26,8 @@ class Question
 
   def check_limit
   begin
-    if @variants.length > 4
-      raise LimitError, "Dont create more 4 variants press 2 to stop"
+    if @variants.length > 3
+  raise LimitError, "Dont create more 4 variants"
     end
   rescue LimitError => e
     puts e.message
@@ -51,7 +51,7 @@ class Question
   end
 
   def self.last
-  	@@questions1.last
+    @@questions1.last
   end
 
   private
